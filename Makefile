@@ -10,6 +10,8 @@ createdb:
 dropdb:
 	docker exec -it postgres12 dropdb bankapp
 
+#マイグレ
+
 migrateup:
 	migrate -path db/migration -database "postgresql://root:secret@localhost:5432/bankapp?sslmode=disable" -verbose up
 
